@@ -1,0 +1,8 @@
+Started by user [8mha:////4MUgT8Drx7ad6qQAjmO6j303wLsXBgvWkJeh53RSR5i2AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building remotely on [8mha:////4LYLrA3kbbf0cAy+7K25ejfllv4bZFQPVMwrZ/gddZewAAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZ+/eT83ILSktQifT9/F1dDAHjR2ovEAAAA[0mNODE1 in workspace /Users/letrinhphuoc/Documents/phuoclet_web_automation/web-automation-framework/jenkins/jenkins/volumes/node/workspace/DOCKER_TEST
+[DOCKER_TEST] $ /bin/sh -xe /var/folders/r5/6ppq259s7nx8qjpwlblhypfc0000gn/T/jenkins14660660071500862684.sh
++ docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED             STATUS             PORTS                                              NAMES
+8cee229ddc23   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   About an hour ago   Up About an hour   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   jenkins-jenkins-1
+Finished: SUCCESS
