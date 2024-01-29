@@ -18,18 +18,19 @@ pipeline{
 
         stage('Build Image'){
             steps{
-                sh 'docker build -t=phuocleautoqa/selenium .'
+                sh 'docker build -t=phuocleautoqa/selenium:latest .'
             }
         }
 
         stage('Push Image'){
             environment{
-                // assuming you have stored the credentials with this name
                 DOCKER_HUB = credentials('dockerhub-creds')
             }
             steps{
                 sh 'echo ${DOCKER_HUB_PSW} | docker login -u ${DOCKER_HUB_USR} --password-stdin'
-                sh 'docker push phuocleautoqa/selenium'
+                sh 'docker push phuocleautoqa/selenium:latest'
+                sh "docker tag vinsdocker/selenium:latest phuocleautoqa/selenium:${env.BUILD_NUMBER}"
+                sh "docker push phuocleautoqa/selenium:${env.BUILD_NUMBER}"
             }
         }
 
