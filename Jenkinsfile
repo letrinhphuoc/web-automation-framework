@@ -1,35 +1,44 @@
-pipeline {
-    agent none
-    stages {
-        stage('Build Jar') {
-            agent {
-                docker {
-                    image 'maven:3.9.3-eclipse-temurin-17-focal'
-                    args '-u root -v /tmp/m2:/root/.m2'
-                }
-            }
-            steps {
+/*
+    Note:
+    
+    Windows users use "bat" instead of "sh"
+    For ex: bat 'docker build -t=phuocleautoqa/selenium .'
+*/
+pipeline{
+
+    agent any
+
+    stages{
+
+        stage('Build Jar'){
+            steps{
                 sh 'mvn clean package -DskipTests'
             }
         }
-        stage('Build Image') {
-            steps {
-                script {
-                    app = docker.build('phuocleautoqa/selenium')
-                }
+
+        stage('Build Image'){
+            steps{
+                sh 'docker build -t=phuocleautoqa/selenium .'
             }
         }
 
         stage('Push Image'){
+            environment{
+                // assuming you have stored the credentials with this name
+                DOCKER_HUB = credentials('dockerhub-creds')
+            }
             steps{
-                script {
-                    // registry url is blank for dockerhub
-                    docker.withRegistry('', 'dockerhub-creds') {
-                        app.push("latest")
-                    }
-                }
+                sh 'echo ${DOCKER_HUB_PSW} | docker login -u ${DOCKER_HUB_USR} --password-stdin'
+                sh 'docker push phuocleautoqa/selenium'
             }
         }
 
     }
+
+    post {
+        always {
+            sh 'docker logout'
+        }
+    }
+
 }
