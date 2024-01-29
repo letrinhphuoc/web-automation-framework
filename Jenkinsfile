@@ -29,7 +29,7 @@ pipeline{
             steps{
                 sh 'echo ${DOCKER_HUB_PSW} | docker login -u ${DOCKER_HUB_USR} --password-stdin'
                 sh 'docker push phuocleautoqa/selenium:latest'
-                sh "docker tag vinsdocker/selenium:latest phuocleautoqa/selenium:${env.BUILD_NUMBER}"
+                sh "docker tag phuocleautoqa/selenium:latest phuocleautoqa/selenium:${env.BUILD_NUMBER}"
                 sh "docker push phuocleautoqa/selenium:${env.BUILD_NUMBER}"
             }
         }
