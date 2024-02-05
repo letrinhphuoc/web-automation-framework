@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"4abcdec35c3089ec18466f7f0315d330","name":"flight-reservation","statistic":{"failed":0,"broken":0,"skipped":0,"passed":20,"unknown":0,"total":20}},{"uid":"9847ed8f7342b2177665a265570da541","name":"vendor-portal","statistic":{"failed":0,"broken":0,"skipped":0,"passed":9,"unknown":0,"total":9}}]}
