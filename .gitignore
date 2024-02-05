@@ -47,3 +47,4 @@
 **/mvnw.cmd
 **/node_modules/
 **/jenkins/volumes
+output
