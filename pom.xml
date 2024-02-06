@@ -57,6 +57,13 @@
             <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>selenium-docker</finalName>
@@ -78,8 +85,8 @@
                 <configuration>
                     <!-- mvn clean test -Dbrowser=chrome -Dselenium.grid.enabled=true -->
                     <systemPropertyVariables>
-                        <browser>firefox</browser>
-                        <selenium.grid.enabled>true</selenium.grid.enabled>
+                        <browser>chrome</browser>
+                        <selenium.grid.enabled>false</selenium.grid.enabled>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <file>src/test/resources/test-suites/vendor-portal.xml</file>

@@ -13,4 +13,11 @@ public class Constants {
 
     public static final String FLIGHT_RESERVATION_URL = "flightReservation.url";
     public static final String VENDOR_PORTAL_URL = "vendorPortal.url";
+
+    public static final String OS_NAME = System.getProperty("os.name");
+    public static final String JAVA_VERSION = System.getProperty("java.version");
+
+    public static final String RELATIVE_PROJECT_PATH = System.getProperty("user.dir");
+
+
 }

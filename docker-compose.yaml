@@ -9,6 +9,7 @@ services:
       - TEST_SUITE=vendor-portal.xml
     volumes:
       - ./output/vendor-portal:/home/selenium-docker/test-output
+      - ./extent-report/vendor-portal:/home/selenium-docker/extent-report
   flight-reservation:
     image: phuocleautoqa/selenium
     environment:
@@ -18,3 +19,4 @@ services:
       - TEST_SUITE=flight-reservation.xml
     volumes:
       - ./output/flight-reservation:/home/selenium-docker/test-output
+      - ./extent-report/flight-reservation:/home/selenium-docker/extent-report

@@ -48,3 +48,4 @@
 **/node_modules/
 **/jenkins/volumes
 output
+extent-report
